@@ -50,3 +50,63 @@ article tag, section tag, header tag
     a:hover{}
     a:active{} for when it is clicked
  -->
+
+<!-- When the shorthand margin property has two values, it sets margin-top and margin-bottom to the first value, and
+margin-left and margin-right to the second value.
+
+The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 0 to 100 for saturation, and a
+percentage from 0 to 100 for lightness.
+
+One thing to remember is that the linear-gradient function actually creates an image element, and is usually paired with
+the background property which can accept an image as a value
+
+border-left: width style color;
+
+rgba-> a for opacity by alpha channel
+
+Notice that the edges of the shadow are sharp. This is because there is an optional blurRadius value for the box-shadow
+property:
+box-shadow: offsetX offsetY blurRadius color; 
+
+
+-->
+
+body {
+width: 100%;
+height: 100vh;
+margin: 0;
+background-color: #1b1b32;
+color: #f5f6f7;
+font-family: Tahoma;
+font-size: 16px;
+}
+
+h1, p {
+margin: 1em auto;
+text-align: center;
+}
+
+form {
+width: 60vw;
+max-width: 500px;
+min-width: 300px;
+margin: 0 auto;
+}
+
+<!-- The border of the last fieldset element looks a little out of place. You can select the last element of a specific type
+using the last-of-type CSS pseudo-class, like this:
+
+p:last-of-type { } 
+
+-->
+
+
+
+label {
+display: block;
+margin: 0.5rem 0;
+}
+
+<!-- you will notice the .inline elements are too high on the line.
+
+To combat this, set the vertical-align property to middle. -->
