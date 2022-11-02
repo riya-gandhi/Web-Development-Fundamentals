@@ -14,3 +14,25 @@ console.log(minNum); //-12
 // In an object literal, the spread syntax enumerates the properties of an object and 
 // adds the key-value pairs to the object being created.
 
+// ---------------------------------------------------------------------
+
+const HIGH_TEMPERATURES = {
+  yesterday: 75,
+  today: 77,
+  tomorrow: 80
+};
+
+const {today,tomorrow} = HIGH_TEMPERATURES; // destructure assignment
+//note the variable names are same
+const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES; // diff names after destructure
+// now the variables names are highToday and highTomorrow
+
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+const {today: {high: highTodayy, low: lowTodayy}} = LOCAL_FORECAST; // nested destructure
+
+// -----------------------------------------------------------------------------
+
