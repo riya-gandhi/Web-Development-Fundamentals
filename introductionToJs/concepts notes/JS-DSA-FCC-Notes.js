@@ -34,5 +34,93 @@ const LOCAL_FORECAST = {
 };
 const {today: {high: highTodayy, low: lowTodayy}} = LOCAL_FORECAST; // nested destructure
 
-// -----------------------------------------------------------------------------
+// ----------------------destructure array-------------------------------------------------------
+
+const [x,y] = [1,2,3,4];
+// x=1,y=2
+const [f,g,,h] = [1,2,3,4,5];
+// f=1,g=2,h=4
+
+// swapping two variables using array destructure
+let aa = 6;
+let bb = 8;
+[aa,bb] = [bb,aa];
+
+const [a, b, ...arr] = [1, 2, 3, 4, 5, 7];
+console.log(a, b);
+console.log(arr);
+// The console would display the values 1, 2 and [3, 4, 5, 7].
+
+// Variables a and b take the first and second values from the array. 
+// After that, because of the rest parameter's presence, 
+// arr gets the rest of the values in the form of an array. 
+// The rest element only works correctly as the last variable in the list. 
+
+// As in, you cannot use the rest parameter to catch a subarray that leaves out the 
+// last element of the original array.
+
+
+
+// ---------Use Destructuring Assignment to Pass an Object as a Function's Parameters--------------------------------------------------------------------------------------
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+};
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = ({max,min}) => (max + min) / 2.0; //destructure on parameters itself - notice variable names though
+
+
+// ------------template literal for complex strings------------------------
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56,
+};
+
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`; // notice `` and ${variable}
+
+// while declaring methods of a object, no need to write function keyword
+
+// the class keyword declares a new function, to which a constructor is added. 
+// This constructor is invoked when new is called to create a new object.
+
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book("anonymous");
+console.log(novel.writer);
+novel.writer = "newAuthor";
+console.log(novel.writer);
+
+
+// get set functions
+// ex defining object with F temp
+// when you get it, in get func you return the celsius one
+// when you are setting it, you are getting the input in celsius, you set in fareinheight
+// but when you get it again - it is still in celsius
+
+// https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-getters-and-setters-to-control-access-to-an-object
+
+
+
+
+
+
 
