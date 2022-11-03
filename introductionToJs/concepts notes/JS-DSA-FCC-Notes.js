@@ -118,6 +118,21 @@ console.log(novel.writer);
 
 // https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/use-getters-and-setters-to-control-access-to-an-object
 
+<script type="module" src="filename.js"></script>
+// A script that uses this module type can now use the import and export features you will learn about in the upcoming challenges.
+
+// import {} from "./path";
+// export {}
+//import * as objectName from "./path"
+// above will be used as objectName.func1();
+
+// export default
+// Usually you will use this syntax if only one value is being exported from a file. 
+// It is also used to create a fallback value for a file or module.
+
+import add from "./math_functions.js";
+// The syntax differs in one key place. The imported value, add, is not surrounded by curly braces ({}). add here is simply a variable name for whatever the default export of the math_functions.js file is. 
+// You can use any name here when importing a default.
 
 
 
