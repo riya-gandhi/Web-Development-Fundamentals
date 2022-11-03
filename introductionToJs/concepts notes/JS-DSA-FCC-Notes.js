@@ -134,6 +134,30 @@ import add from "./math_functions.js";
 // The syntax differs in one key place. The imported value, add, is not surrounded by curly braces ({}). add here is simply a variable name for whatever the default export of the math_functions.js file is. 
 // You can use any name here when importing a default.
 
+// -------------------------------------------------------------------------
+
+const makeServerRequest = new Promise((resolve,reject)=>{
+});
+
+//promise takes a function as input with 2 params - has 3 states - pending - accept - reject
+
+const makeServerRequestt = new Promise((resolve, reject) => {
+  // responseFromServer represents a response from a server
+  let responseFromServer;
+
+  if (responseFromServer) {
+    resolve("We got the data");
+  } else {
+    reject("Data not received");
+  }
+});
+
+makeServerRequestt.then((result) => {
+  console.log(result);
+});
+makeServerRequestt.catch((error) => {
+  console.log(error);
+});
 
 
 
