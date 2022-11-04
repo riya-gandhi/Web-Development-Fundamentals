@@ -159,6 +159,96 @@ makeServerRequestt.catch((error) => {
   console.log(error);
 });
 
+// -----------------------end of ES6----------------------------------------
+// -----------------------Regex or Regular Expressions begin----------------------------------------
+
+// Regular expressions are used in programming languages to match parts of strings. 
+// You create patterns to help you do that matching.
+
+let testStr = "freeCodeCamp";
+let testRegex = /Code/;
+testRegex.test(testStr);
+// The test method here returns true. 'code' search will return false as here theres literal match
+
+let petString = "James has a pet cat.";
+let petRegex = /dog|cat|bird|fish/; // OR for regex matching
+let result = petRegex.test(petString); // matched literrally case sensitive
+
+let myString = "freeCodeCamp";
+let fccRegex = /freeCodeCamp/i; // notice "/fcc/i" i flag is to match string not literraly
+let result2 = fccRegex.test(myString);
+
+"Hello, World!".match(/Hello/);
+let ourStr = "Regular expressions";
+let ourRegex = /expressions/;
+ourStr.match(ourRegex);
+// Here the first match would return ["Hello"] and the second would return ["expressions"].
+
+// Note that the .match syntax is the "opposite" of the 
+// .test method you have been using thus far:
+
+'string'.match(/regex/);
+/regex/.test('string');
+
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// And here match returns the value ["Repeat", "Repeat", "Repeat"]
+// NOTE: we can have multiple flags /gi for globalsearch and case insensitive
+
+let humStr = "I'll hum a song";
+let hugStr = "Bear hug";
+let huRegex = /hu./;
+huRegex.test(humStr);
+huRegex.test(hugStr);
+// Both of these test calls would return true.
+
+let bigStr = "big";
+let bagStr = "bag";
+let bugStr = "bug";
+let bogStr = "bog";
+let bgRegex = /b[aiu]g/;
+bigStr.match(bgRegex);
+bagStr.match(bgRegex);
+bugStr.match(bgRegex);
+bogStr.match(bgRegex);
+// In order, the four match calls would return the values ["big"], ["bag"], ["bug"], and null.
+
+let catStr = "cat";
+let batStr = "bat";
+let matStr = "mat";
+let bgRegex2 = /[a-e]at/;
+catStr.match(bgRegex2);
+batStr.match(bgRegex2);
+matStr.match(bgRegex2);
+// In order, the three match calls would return the values ["cat"], ["bat"], and null.
+
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/gi;
+jennyStr.match(myRegex); // range of nums and alphabets both
+
+let myRegexx = /[^0-9aeiou]/gi; // ^ for negation of character class[]
+
+let difficultSpelling = "Mississippi";
+let myRegex2 = /s+/g; // WILL RETURN ARR WITH CONSECUTIVE MORE THAN ONE OCCURRENCE
+// NOTICE THE SYNTAX: THIS IS NOT USED IN CHARACTER CLASS[]
+let result3 = difficultSpelling.match(myRegex2);
+console.log(result3); //["ss","ss"]
+
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/; // ZERO OR MORE TIMES
+soccerWord.match(goRegex);
+gPhrase.match(goRegex);
+oPhrase.match(goRegex);
+// In order, the three match calls would return the values ["goooooooo"], ["g"], and null.
+
+
+
+
+
+
 
 
 
