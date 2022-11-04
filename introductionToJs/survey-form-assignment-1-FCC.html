@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Kindly fill the survey XD</p>
+    <form id="survey-form">
+        <fieldset>
+            <label for="name" id="name-label">Name: <input type="text" id="name" placeholder="Enter your name.." required></label>
+            <label for="email" id="email-label">Email: <input type="email" id="email" placeholder="Enter your email.." required></label>
+            <label for="number" id="number-label">Age: <input type="number" id="number" min="18" max="120" placeholder="Enter your age.." required></label>
+            <label for="dropdown" id="dropdown-label">Favourite F.R.I.E.N.D.S character: 
+                <select name="drop-down" id="dropdown">
+                    <option value=" ">Select one option</option>
+                    <option value="joey">Joey</option>
+                    <option value="monica">Monica</option>
+                    <option value="ross">Ross</option>
+                    <option value="chandler">Chandler</option>
+                    <option value="rachel">Rachel</option>
+                    <option value="phoebe">Phoebe</option>
+                </select>
+            </label>
+            <label id="who-said-it-label">Who said it - "Ohh my eyes, MY EYES!"
+                <input type="radio" name="wsi" value="rachel"> Rachel 
+                <input type="radio" name="wsi" value="phoebe"> Phoebe 
+                <input type="radio" name="wsi" value="monica"> Monica
+            </label>
+            <label id="checkbox-label"> Other favourite sitcoms: 
+                <input type="checkbox" name="fav-sitcom" value="two-and-half-men"> Two and a half Men
+                <input type="checkbox" name="fav-sitcom" value="that-70s-show"> That 70's show
+                <input type="checkbox" name="fav-sitcom" value="big-bang-theory"> Big Bang Theory
+                <input type="checkbox" name="fav-sitcom" value="how-i-met-your-mother"> How I met your mother
+                <input type="checkbox" name="fav-sitcom" value="young-sheldon"> Young Sheldon
+                <input type="checkbox" name="fav-sitcom" value="arrested-developement"> Arrested Developement
+                <input type="checkbox" name="fav-sitcom" value="brooklyn-99"> Brooklyn 99
+                <input type="checkbox" name="fav-sitcom" value="parks-and-rec"> Parks and Recreation
+
+            </label>
+            <label for="fav-episode" id="fav-episode-label"> Your favourite episode: 
+                <textarea name="favourite-episode" id="fav-episode" cols="30" rows="10" placeholder="My favourite episode from friends was the one where...."></textarea>
+            </label>
+
+        </fieldset>
+        <fieldset>
+            <input type="submit" name="Submit" id="submit-button">
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
