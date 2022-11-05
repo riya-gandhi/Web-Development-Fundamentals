@@ -270,7 +270,78 @@ let caboose = "The last car on a train is the caboose";
 let lastRegex = /caboose$/; // $-anchor char for checking if present at the end 
 let result6 = lastRegex.test(caboose);
 
-// --------------------------------------------------------------------------------
+// ---------short hand character classes-----------------------------------------------------------------------
+
+let longHand = /[A-Za-z0-9_]+/;
+let shortHand = /\w+/;
+let numberss = "42";
+let varNames = "important_var";
+longHand.test(numbers);
+shortHand.test(numbers);
+longHand.test(varNames);
+shortHand.test(varNames);
+
+// All four of these test calls would return true.
+// These shortcut character classes are also known as shorthand character classes.
+
+
+// This shortcut is the same as [^A-Za-z0-9_].
+let shortHand2 = /\W/;
+let numbersss = "42%";
+let sentence = "Coding!";
+numbers.match(shortHand);
+sentence.match(shortHand);
+// The first match call would return the value ["%"] and the second would return ["!"].
+
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g; // \d to count all digits [0-9]
+let result7 = movieName.match(numRegex).length;
+
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g; // [^0-9]
+let result = movieName.match(noNumRegex).length;
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let spaceRegex = /\s/g;
+whiteSpace.match(spaceRegex);
+// This match call would return [" ", " "].
+
+// Search for non-whitespace using \S, which is an uppercase s. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [^ \r\t\f\n\v].
+
+let whiteSpace = "Whitespace. Whitespace everywhere!"
+let nonSpaceRegex = /\S/g;
+whiteSpace.match(nonSpaceRegex).length;
+// The value returned by the .length method would be 32.
+
+let A4 = "aaaah";
+let A2 = "aah";
+let multipleA = /a{3,5}h/;
+multipleA.test(A4);
+multipleA.test(A2);
+// The first test call would return true, while the second would return false.
+
+
+// to match only the string hah with the letter a appearing at least 3 times, your regex would be /ha{3,}h/.
+let A4 = "haaaah";
+let A2 = "haah";
+let A100 = "h" + "a".repeat(100) + "h";
+let multipleA = /ha{3,}h/;
+multipleA.test(A4);
+multipleA.test(A2);
+multipleA.test(A100);
+// In order, the three test calls would return true, false, and true.
+
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // returns true only on Timmmmber 
+let result = timRegex.test(timStr);
+
+// You can think of this symbol as saying the previous element is optional.
+let american = "color";
+let british = "colour";
+let rainbowRegex= /colou?r/;
+rainbowRegex.test(american);
+rainbowRegex.test(british);
+// Both uses of the test method would return true.
 
 
 
