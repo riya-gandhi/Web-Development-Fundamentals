@@ -243,6 +243,34 @@ soccerWord.match(goRegex);
 gPhrase.match(goRegex);
 oPhrase.match(goRegex);
 // In order, the three match calls would return the values ["goooooooo"], ["g"], and null.
+// also called greedy pattern
+
+
+// You can apply the regex /t[a-z]*i/ to the string "titanic". 
+// This regex is basically a pattern that starts with t, ends with i, 
+// and has some letters in between.
+// Regular expressions are by default greedy, so the match would return ["titani"]. 
+// It finds the largest sub-string possible to fit the pattern.
+// However, you can use the ? character to change it to lazy matching. 
+// "titanic" matched against the adjusted regex of /t[a-z]*?i/ returns ["ti"].
+
+// DIDNT UNDERSTAND: Note: Parsing HTML with regular expressions should be avoided, but pattern matching an HTML string with regular expressions is completely fine.
+
+// Fix the regex /<.*>/ to return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>". Remember the wildcard . in a regular expression matches any character.
+let text = "<h1>Winter is coming</h1>";
+let myRegex3 = /<.*?>/; 
+let result4 = text.match(myRegex3);
+
+
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // outside character set, ^ is used to check if string is in the beginning
+let result5 = calRegex.test(rickyAndCal);
+
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // $-anchor char for checking if present at the end 
+let result6 = lastRegex.test(caboose);
+
+// --------------------------------------------------------------------------------
 
 
 
