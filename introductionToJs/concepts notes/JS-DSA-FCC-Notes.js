@@ -297,9 +297,9 @@ let movieName = "2001: A Space Odyssey";
 let numRegex = /\d/g; // \d to count all digits [0-9]
 let result7 = movieName.match(numRegex).length;
 
-let movieName = "2001: A Space Odyssey";
+let movieNamet = "2001: A Space Odyssey";
 let noNumRegex = /\D/g; // [^0-9]
-let result = movieName.match(noNumRegex).length;
+let resultttttt = movieName.match(noNumRegex).length;
 
 let whiteSpace = "Whitespace. Whitespace everywhere!"
 let spaceRegex = /\s/g;
@@ -308,7 +308,7 @@ whiteSpace.match(spaceRegex);
 
 // Search for non-whitespace using \S, which is an uppercase s. This pattern will not match whitespace, carriage return, tab, form feed, and new line characters. You can think of it being similar to the character class [^ \r\t\f\n\v].
 
-let whiteSpace = "Whitespace. Whitespace everywhere!"
+let whiteSpacet = "Whitespace. Whitespace everywhere!"
 let nonSpaceRegex = /\S/g;
 whiteSpace.match(nonSpaceRegex).length;
 // The value returned by the .length method would be 32.
@@ -322,10 +322,10 @@ multipleA.test(A2);
 
 
 // to match only the string hah with the letter a appearing at least 3 times, your regex would be /ha{3,}h/.
-let A4 = "haaaah";
-let A2 = "haah";
+let A4t = "haaaah";
+let A2t = "haah";
 let A100 = "h" + "a".repeat(100) + "h";
-let multipleA = /ha{3,}h/;
+let multipleAt = /ha{3,}h/;
 multipleA.test(A4);
 multipleA.test(A2);
 multipleA.test(A100);
@@ -333,7 +333,7 @@ multipleA.test(A100);
 
 let timStr = "Timmmmber";
 let timRegex = /Tim{4}ber/; // returns true only on Timmmmber 
-let result = timRegex.test(timStr);
+let resulttttt = timRegex.test(timStr);
 
 // You can think of this symbol as saying the previous element is optional.
 let american = "color";
@@ -343,12 +343,44 @@ rainbowRegex.test(american);
 rainbowRegex.test(british);
 // Both uses of the test method would return true.
 
-let myString = "Eleanor Roosevelt";
-let myRegex = /(Franklin|Eleanor) .*Roosevelt/; // Change this line
-let result = myRegex.test(myString); // Change this line
+let myStringt = "Eleanor Roosevelt";
+let myRegext = /(Franklin|Eleanor) .*Roosevelt/; // Change this line
+let resultttt = myRegex.test(myString); // Change this line
 // After passing the challenge experiment with myString and see how the grouping works
 
 //NOTICE .* FOR CONCESSION OF MIDDLE NAMES
+
+// ---------------------------------------------------------------------------------------
+
+// Capture groups are constructed by enclosing the regex pattern to be captured in parentheses. In this case, the goal is to capture a word consisting of alphanumeric characters so the capture group will be \w+ enclosed by parentheses: /(\w+)/.
+// The substring matched by the group is saved to a temporary "variable", which can be accessed within the same regex using a backslash and the number of the capture group (e.g. \1). Capture groups are automatically numbered by the position of  their opening parentheses (left to right), starting at 1.
+
+// The example below matches a word that occurs thrice separated by spaces:
+
+let repeatRegext = /(\w+) \1 \1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["row row row", "row"]
+
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+) \1 \1$/; // to stop matching for 42 42 42 42, ^ and $ used
+let resulttt = reRegex.test(repeatNum);
+
+
+// The replace call would return the string The sky is blue..
+// You can also access capture groups in the replacement string with dollar signs ($).
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+// The replace call would return the string Camp Code.
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; 
+let replaceText = "$3 $2 $1";
+let resultt = str.replace(fixRegex, replaceText); //changing 123 to 321
+
+// -------------trimming white space in starting and end--------------------------
+
+let hello = "   Hello, World!  ";
+let wsRegex = /^\s+|\s+$/g; // g flag is required so that all instances are selected
+let resulttttttt = hello.replace(wsRegex,""); 
 
 
 
