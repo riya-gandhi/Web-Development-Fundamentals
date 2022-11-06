@@ -382,6 +382,92 @@ let hello = "   Hello, World!  ";
 let wsRegex = /^\s+|\s+$/g; // g flag is required so that all instances are selected
 let resulttttttt = hello.replace(wsRegex,""); 
 
+// ------------------------------------------------------------------------------------------------
+// ---------debugging module start---------------------------------------------------------------------------------------
+
+typeof "string";
+
+// ------------------------------------
+// -------------basic ds module start-----------------------
+
+let array = [1,2,3,4];
+let splicedArr = array.splice(beginIdx,frequencyOfDeletions);
+
+// splice function modifies the original array and returns the removed items
+const numberssss = [10, 11, 12, 12, 15];
+const startIndex = 3;
+const amountToDelete = 1;
+
+numbers.splice(startIndex, amountToDelete, 13, 14);
+console.log(numbers);
+// The second occurrence of 12 is removed, and we add 13 and 14 at the same index. The numbers array would now be [ 10, 11, 12, 13, 14, 15 ].
+
+// --------------------------
+
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+let todaysWeather = weatherConditions.slice(1, 3);
+// todaysWeather would have the value ['snow', 'sleet'], 
+// while weatherConditions would still have ['rain', 'snow', 'sleet', 'hail', 'clear'].
+
+//SPREAD OPERATOR
+
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+    // Only change code below this line
+    newArr.push([...arr]); //NOTICE output [[t,f,t],[t,f,t]]
+    // Only change code above this line
+    num--;
+  }
+  return newArr;
+}
+console.log(copyMachine([true, false, true], 2));
+// ----------
+
+let thisArray = ['sage', 'rosemary', 'parsley', 'thyme'];
+let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander'];
+// thatArray would have the value ['basil', 'cilantro', 'sage', 'rosemary', 'parsley', 'thyme', 'coriander'].
+// Using spread syntax, we have just achieved an operation that would
+//  have been more complex and more verbose had we used traditional methods.
+
+// -----------------------------------------------
+
+users.hasOwnProperty('Alan');
+'Alan' in users;
+// Both of these would return true.
+
+for(let key in object2);
+// NOTE: Objects do not maintain an ordering to stored keys like arrays do; 
+// thus a key's position on an object, 
+// or the relative order in which it appears, is irrelevant when referencing or 
+// accessing that key.
+
+const users = {
+  Alan: {
+    online: false,
+  },
+  Jeff: {
+    online: true,
+  },
+  Sarah: {
+    online: false,
+  },
+};
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  let count = 0;
+  for (let key in usersObj) {
+    if (usersObj[key]["online"] == true) { //NOTE
+      count++;
+    }
+  }
+  return count;
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+
 
 
 
